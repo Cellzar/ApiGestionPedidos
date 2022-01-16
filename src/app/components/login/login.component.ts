@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, public service: LoginService, private cookieService: CookieService) { }
 
   ngOnInit() {
+    if(this.cookieService.get('token') != "" || this.cookieService.get('token') != undefined){
+      this.router.navigate(["home"]);
+    }
   }
 
   login(): void {

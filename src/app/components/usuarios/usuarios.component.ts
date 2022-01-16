@@ -19,7 +19,7 @@ export class UsuariosComponent implements OnInit {
   passConfirm: string = '';
   passConfirmModal: string = '';
   usuarios: Usuario[] = [];
-  displayedColumns: string[] = ['usuId', 'usuNombre', 'usuPass', 'accion'];
+  displayedColumns: string[] = ['usuId', 'usuNombre', 'accion'];
   dataSource!: MatTableDataSource<Usuario>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

@@ -10,3 +10,7 @@ table {
 td, th {
   width: 25%;
 }
+
+.input-group-text{
+  padding: 10px;
+}

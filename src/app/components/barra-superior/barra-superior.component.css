@@ -3,3 +3,20 @@
   color: #3F51B5;
   border: 1px solid #3F51B5;
 }
+
+.login-form-font-header {
+  font-size:20px;
+  font-weight: bold;
+}
+
+.login-form-font-header span {
+  color: #007C9B;
+}
+
+.mat-button{
+  margin-left: 10px;
+}
+
+.cerrar{
+  margin-left: 100%;
+}

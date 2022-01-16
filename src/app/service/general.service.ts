@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment.prod';
 import { Respuesta } from '../models/Respuesta';
 import { CookieService } from 'ngx-cookie-service';
 import { Usuario } from '../models/Usuario';
+import { Pedido } from '../models/Pedido';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +61,26 @@ export class GeneralService {
 
   borrarUsuario(id:number){
     return this.http.delete<Respuesta>(`${this.url}/api/Usuarios/BorrarUsuario?Id=${id}`,  {headers: this.reqHeader});
+  }
+
+
+  guardarPedido(pedido: Pedido){
+    return this.http.post<Respuesta>(`${this.url}/api/Pedidos/GuardarPedido`, pedido, {headers: this.reqHeader});
+  }
+
+  cargarPedidos(){
+    return this.http.get<Respuesta>(`${this.url}/api/Pedidos/ObtenerPedidos`,  {headers: this.reqHeader});
+  }
+
+  cargarPedido(id: number){
+    return this.http.get<Respuesta>(`${this.url}/api/Pedidos/ObtenerPedido?Id=${id}`,  {headers: this.reqHeader});
+  }
+
+  editarPedido(pedido: Pedido, id:number){
+    return this.http.put<Respuesta>(`${this.url}/api/Pedidos/EditarPedido?Id=${id}`, pedido,  {headers: this.reqHeader});
+  }
+
+  borrarPedido(id:number){
+    return this.http.delete<Respuesta>(`${this.url}/api/Pedidos/BorrarPedido?Id=${id}`,  {headers: this.reqHeader});
   }
 }

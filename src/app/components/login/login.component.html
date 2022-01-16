@@ -1,26 +1,31 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form class="example-form">
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-            <input matInput placeholder="Usuario" [(ngModel)]="usuario.usuNombre" name="username" required>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-        <td><mat-form-field class="example-full-width">
-          <input matInput placeholder="Contraseña" [(ngModel)]="usuario.usuPass" type="password" name="password" required>
-        </mat-form-field></td>
-      </tr></table>
-    </form>
-    <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Ingresar</button>
-  </mat-card-actions>
-</mat-card>
+
+
+
+<div class="container">
+  <div class="row text-center login-page">
+    <div class="col-md-12 login-form" style="background-color: white;">
+		    <div class="col-md-12 login-form-header">
+		       <p class="login-form-font-header">Gestion<span>APP</span><p>
+		    </div>
+      <mat-card-content>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Usuario</mat-label>
+            <input matInput placeholder="usuario" [(ngModel)]="usuario.usuNombre"  name="user" value="c-sar-torres@hotmail.com">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="usuario.usuPass" placeholder="contraseña" name="pass" value="4567237">
+          </mat-form-field>
+
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="login()" style="margin-left: 75%;">Ingresar</button>
+          </mat-card-actions>
+        </form>
+
+      </mat-card-content>
+      <br>
+  </div>
+</div>
+</div>
