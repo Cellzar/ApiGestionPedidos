@@ -10,7 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -23,7 +23,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   MatTableModule,
   MatMenuModule,
   MatIconModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatPaginatorModule
   ],
   exports: [
   CommonModule,
@@ -35,7 +36,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
    MatTableModule,
    MatMenuModule,
    MatIconModule,
-   MatProgressSpinnerModule
+   MatProgressSpinnerModule,
+   MatPaginatorModule
    ],
 })
 export class CustomMaterialModule { }

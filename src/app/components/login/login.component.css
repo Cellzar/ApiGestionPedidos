@@ -1,6 +1,15 @@
 .example-card {
-  max-width: 200px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15%;
+  margin-top: 10%;
+  border: 1px solid blue;
+}
+
+body{
+  background-color: blue !important;
+}
+
+.mat-input-element{
+  width: 245px !important;
 }
