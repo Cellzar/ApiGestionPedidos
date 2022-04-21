@@ -16,6 +16,7 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VuelosComponent } from './components/vuelos/vuelos.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductosComponent,
     HomeComponent,
     PedidosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    VuelosComponent
   ],
   imports: [
     BrowserModule,

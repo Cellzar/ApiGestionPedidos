@@ -6,6 +6,7 @@ import { Respuesta } from '../models/Respuesta';
 import { CookieService } from 'ngx-cookie-service';
 import { Usuario } from '../models/Usuario';
 import { Pedido } from '../models/Pedido';
+import { Vuelos } from '../models/Vuelos';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,14 @@ export class GeneralService {
   });
 
   constructor(public http: HttpClient, private cookieService: CookieService) { }
+
+  cargarListadoCiudades(){
+    return this.http.get<Respuesta>(`${this.url}/api/Listas/ObtenerCiudad`);
+  }
+
+  cargarListadoAerolineas(){
+    return this.http.get<Respuesta>(`${this.url}/api/Listas/ObtenerAerolineas`);
+  }
 
   guardarProductos(producto: Producto){
     return this.http.post<Respuesta>(`${this.url}/api/Productos/GuardarProducto`, producto, {headers: this.reqHeader});
@@ -82,5 +91,25 @@ export class GeneralService {
 
   borrarPedido(id:number){
     return this.http.delete<Respuesta>(`${this.url}/api/Pedidos/BorrarPedido?Id=${id}`,  {headers: this.reqHeader});
+  }
+
+  guardarVuelo(vuelos: Vuelos){
+    return this.http.post<Respuesta>(`${this.url}/api/Vuelos/GuardarActualizarCita`, vuelos, {headers: this.reqHeader});
+  }
+
+  cargarVuelos(){
+    return this.http.get<Respuesta>(`${this.url}/api/Vuelos/ObtenerVuelos`,  {headers: this.reqHeader});
+  }
+
+  cargarVuelo(id: number){
+    return this.http.get<Respuesta>(`${this.url}/api/Vuelos/ObtenerVuelos?Id=${id}`,  {headers: this.reqHeader});
+  }
+
+  borrarVuelo(id:number){
+    return this.http.delete<Respuesta>(`${this.url}/api/Vuelos/BorrarVuelo?Id=${id}`,  {headers: this.reqHeader});
+  }
+
+  editarVuelo(vuelos: Vuelos){
+    return this.http.post<Respuesta>(`${this.url}/api/Vuelos/GuardarActualizarCita`, vuelos,  {headers: this.reqHeader});
   }
 }
