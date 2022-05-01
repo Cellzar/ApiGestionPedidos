@@ -1,13 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
 
-    <p class="login-form-font-header" routerLink="/home" style="cursor: pointer;" >Gestion<span>APP</span><p>
+    <p class="login-form-font-header" routerLink="/home" style="cursor: pointer;" >Prueba<span>APP</span><p>
       <span class="example-fill-remaining-space"></span>
       <span class="align-center"></span>
       <span class="example-fill-remaining-space"></span>
-      <button mat-button routerLink="productos" routerLinkActive="active">Productos</button>
       <button mat-button routerLink="vuelos" routerLinkActive="active">Vuelos</button>
-      <button mat-button routerLink="pedidos" routerLinkActive="active">Pedidos</button>
-      <button mat-button routerLink="usuarios" routerLinkActive="active">Usuarios</button>
+      <button mat-button routerLink="usuarios" *ngIf="loginService.perfilId == 1" routerLinkActive="active">Usuarios</button>
       <button mat-button class="cerrar" (click)="cerrarSesion()">Cerrar sesión</button>
    </mat-toolbar-row>

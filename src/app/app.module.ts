@@ -10,9 +10,7 @@ import {FormsModule} from '@angular/forms';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { BarraSuperiorComponent } from './components/barra-superior/barra-superior.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductosComponent } from './components/productos/productos.component';
 import { HomeComponent } from './components/home/home.component';
-import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -24,9 +22,7 @@ import { VuelosComponent } from './components/vuelos/vuelos.component';
     AppComponent,
     LoginComponent,
     BarraSuperiorComponent,
-    ProductosComponent,
     HomeComponent,
-    PedidosComponent,
     UsuariosComponent,
     VuelosComponent
   ],

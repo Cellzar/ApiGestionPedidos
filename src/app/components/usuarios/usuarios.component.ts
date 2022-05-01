@@ -6,6 +6,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import Swal from 'sweetalert2';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -25,7 +26,7 @@ export class UsuariosComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild('content', { static: true }) modal!: ElementRef;
-  constructor(public general: GeneralService, private modalService: NgbModal, config: NgbModalConfig) {
+  constructor(public general: GeneralService, private modalService: NgbModal, config: NgbModalConfig, public loginService: LoginService) {
     this.cargarUsuarios();
     config.backdrop = 'static';
     config.keyboard = false;

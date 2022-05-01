@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from '../../service/login.service';
 @Component({
   selector: 'app-vuelos',
   templateUrl: './vuelos.component.html',
@@ -36,6 +37,7 @@ export class VuelosComponent implements OnInit {
   constructor(
     public service: GeneralService,
     private modalService: NgbModal,
+    public loginService: LoginService,
     config: NgbModalConfig
   ) {
     this.obtenerListadoCiudad();
@@ -123,7 +125,7 @@ export class VuelosComponent implements OnInit {
 
   borrarVuelo(id: number) {
     Swal.fire({
-      title: 'Seguro de que quieres borrar este pedido?',
+      title: 'Seguro de que quieres borrar este vuelo?',
       showCancelButton: true,
       icon: 'warning',
       confirmButtonText: 'Si',
@@ -166,8 +168,8 @@ export class VuelosComponent implements OnInit {
 
   editarVuelo() {
     if (
-      this.datosVueloIngresar.ciudadDestino ==
-      this.datosVueloIngresar.ciudadOrigen
+      this.datosVueloEditar.ciudadDestino ==
+      this.datosVueloEditar.ciudadOrigen
     ) {
       Swal.fire(
         'Alerta',

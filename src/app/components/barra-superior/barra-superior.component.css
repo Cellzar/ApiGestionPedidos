@@ -18,5 +18,6 @@
 }
 
 .cerrar{
-  margin-left: 70%;
+  position: absolute;
+  right: 0;
 }

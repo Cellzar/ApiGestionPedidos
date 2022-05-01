@@ -9,6 +9,7 @@ import { Usuario } from '../models/Usuario';
 })
 export class LoginService {
   public url: string = environment.url;
+  public perfilId: number;
   constructor(public http: HttpClient) { }
 
   login(usuario: Usuario){

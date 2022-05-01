@@ -27,9 +27,11 @@ export class LoginComponent implements OnInit {
 
       this.service.login(this.usuario).subscribe(
         result => {
-
+          console.log(result);
           if(result.mensaje == 'Bienvenido al sistema'){
             Swal.fire('Hecho', result.mensaje, 'success');
+            this.service.perfilId = result.data['usuario'].perfil;
+            console.log(this.service.perfilId)
             this.cookieService.set('token', result.data['token']);
             this.router.navigate(["home"]);
           }else{

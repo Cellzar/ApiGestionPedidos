@@ -32,26 +32,6 @@ export class GeneralService {
     return this.http.get<Respuesta>(`${this.url}/api/Listas/ObtenerAerolineas`);
   }
 
-  guardarProductos(producto: Producto){
-    return this.http.post<Respuesta>(`${this.url}/api/Productos/GuardarProducto`, producto, {headers: this.reqHeader});
-  }
-
-  cargarProductos(){
-    return this.http.get<Respuesta>(`${this.url}/api/Productos/ObtenerProductos`,  {headers: this.reqHeader});
-  }
-
-  cargarProducto(id: number){
-    return this.http.get<Respuesta>(`${this.url}/api/Productos/ObtenerProducto?Id=${id}`,  {headers: this.reqHeader});
-  }
-
-  editarProducto(producto: Producto, id:number){
-    return this.http.put<Respuesta>(`${this.url}/api/Productos/EditarProducto?Id=${id}`, producto,  {headers: this.reqHeader});
-  }
-
-  borrarProducto(id:number){
-    return this.http.delete<Respuesta>(`${this.url}/api/Productos/BorrarProducto?Id=${id}`,  {headers: this.reqHeader});
-  }
-
   cargarUsuarios(){
     return this.http.get<Respuesta>(`${this.url}/api/Usuarios/ObtenerUsuarios`,  {headers: this.reqHeader});
   }
@@ -70,27 +50,6 @@ export class GeneralService {
 
   borrarUsuario(id:number){
     return this.http.delete<Respuesta>(`${this.url}/api/Usuarios/BorrarUsuario?Id=${id}`,  {headers: this.reqHeader});
-  }
-
-
-  guardarPedido(pedido: Pedido){
-    return this.http.post<Respuesta>(`${this.url}/api/Pedidos/GuardarPedido`, pedido, {headers: this.reqHeader});
-  }
-
-  cargarPedidos(){
-    return this.http.get<Respuesta>(`${this.url}/api/Pedidos/ObtenerPedidos`,  {headers: this.reqHeader});
-  }
-
-  cargarPedido(id: number){
-    return this.http.get<Respuesta>(`${this.url}/api/Pedidos/ObtenerPedido?Id=${id}`,  {headers: this.reqHeader});
-  }
-
-  editarPedido(pedido: Pedido, id:number){
-    return this.http.put<Respuesta>(`${this.url}/api/Pedidos/EditarPedido?Id=${id}`, pedido,  {headers: this.reqHeader});
-  }
-
-  borrarPedido(id:number){
-    return this.http.delete<Respuesta>(`${this.url}/api/Pedidos/BorrarPedido?Id=${id}`,  {headers: this.reqHeader});
   }
 
   guardarVuelo(vuelos: Vuelos){
