@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-header">
-      <b>CREACIÓN DE USUARIOS</b>
+      <b> <i class="fa fa-user" aria-hidden="true"></i> CREACIÓN DE USUARIOS</b>
     </div>
     <div class="card-body">
       <div class="row">
@@ -20,8 +20,8 @@
               <input type="password" #pass class="form-control" [(ngModel)]="usuario.usuPass" name="" id="" aria-describedby="emailHelpId" placeholder="">
               <div class="input-group-append">
                 <span class="input-group-text" (click)="pass.type == 'password' ? pass.type = 'text': pass.type = 'password'">
-                  <i class="fa fa-eye" *ngIf="pass.type == 'password'"></i>
-                  <i class="fa fa-eye-slash" *ngIf="pass.type == 'text'"></i>
+                  <i  class="fa" [ngClass]="{'fa-eye': pass.type == 'password', 'fa-eye-slash' : pass.type == 'text'}"></i>
+                  <!-- <i class="fa fa-eye-slash" *ngIf="pass.type == 'text'"></i> -->
                 </span>
               </div>
             </div>
@@ -35,8 +35,8 @@
               <input type="password" #passCon class="form-control" [(ngModel)]="passConfirm" name="" id="" aria-describedby="emailHelpId" placeholder="">
               <div class="input-group-append">
                 <span class="input-group-text" (click)="passCon.type == 'password' ? passCon.type = 'text': passCon.type = 'password'">
-                  <i class="fa fa-eye" *ngIf="passCon.type == 'password'"></i>
-                  <i class="fa fa-eye-slash" *ngIf="passCon.type == 'text'"></i>
+                  <i class="fa" [ngClass]="{'fa-eye': passCon.type == 'password', 'fa-eye-slash' : passCon.type == 'text'}" ></i>
+                  <!-- <i class="fa fa-eye-slash" *ngIf="passCon.type == 'text'"></i> -->
                 </span>
               </div>
             </div>
@@ -46,8 +46,11 @@
 
         <div class="col-md-3">
           <div class="form-group">
-            <br>
-            <button type="button" class="btn btn-outline-primary" (click)="guardarUsuario()">Guardar</button>
+            <br><br>
+            <button type="button" class="btn btn-outline-primary" (click)="guardarUsuario()">
+              <i class="fas fa-save    "></i>
+              Guardar
+            </button>
           </div>
         </div>
       </div>
@@ -56,7 +59,7 @@
   <br>
   <div class="card">
     <div class="card-header">
-      <b>USUARIOS</b>
+      <b><i class="fa fa-user" aria-hidden="true"></i> USUARIOS</b>
     </div>
     <div class="card-body">
       <mat-form-field appearance="standard">
@@ -90,8 +93,8 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Acción </th>
             <td mat-cell *matCellDef="let row">
               <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary" (click)="abrirModal(row)">Editar</button>
-                <button type="button" class="btn btn-danger" (click)="borrarUsuario(row.usuId)">Borrar</button>
+                <button type="button" class="btn btn-primary" (click)="abrirModal(row)"><i class="fas fa-edit    "></i>  Editar</button>
+                <button type="button" class="btn btn-danger" (click)="borrarUsuario(row.usuId)"><i class="fa fa-trash" aria-hidden="true"></i>  Borrar</button>
               </div>
             </td>
           </ng-container>
@@ -116,7 +119,7 @@
 
   <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">EDITAR USUARIO</h4>
+      <h4 class="modal-title" id="modal-basic-title"> <i class="fas fa-edit    "></i> EDITAR USUARIO</h4>
       <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -136,8 +139,8 @@
               <input type="password" #passModel class="form-control" [(ngModel)]="usuarioEditar.usuPass" name="" id="" aria-describedby="emailHelpId" placeholder="">
               <div class="input-group-append">
                 <span class="input-group-text" (click)="passModel.type == 'password' ? passModel.type = 'text': passModel.type = 'password'">
-                  <i class="fa fa-eye" *ngIf="passModel.type == 'password'"></i>
-                  <i class="fa fa-eye-slash" *ngIf="passModel.type == 'text'"></i>
+                  <i class="fa" [ngClass]="{'fa-eye': passModel.type == 'password', 'fa-eye-slash' : passModel.type == 'text'}"></i>
+                  <!-- <i class="fa fa-eye-slash" *ngIf="passModel.type == 'text'"></i> -->
                 </span>
               </div>
             </div>
@@ -147,13 +150,12 @@
 
         <div class="col-md-3">
           <div class="form-group">
-            <label for="">Confirmar Contraseña</label>
+            <label for="">Contraseña</label>
             <div class="input-group ">
               <input type="password" #passModCon class="form-control" [(ngModel)]="passConfirmModal" name="" id="" aria-describedby="emailHelpId" placeholder="">
               <div class="input-group-append">
                 <span class="input-group-text" (click)="passModCon.type == 'password' ? passModCon.type = 'text': passModCon.type = 'password'">
-                  <i class="fa fa-eye" *ngIf="passModCon.type == 'password'"></i>
-                  <i class="fa fa-eye-slash" *ngIf="passModCon.type == 'text'"></i>
+                  <i class="fa" [ngClass]="{'fa-eye': passModCon.type == 'password', 'fa-eye-slash' : passModCon.type == 'text'}"></i>
                 </span>
               </div>
             </div>
@@ -163,8 +165,8 @@
 
         <div class="col-md-3">
           <div class="form-group">
-            <br>
-            <button type="button" class="btn btn-outline-primary" (click)="editarUsuario()">Actualizar</button>
+            <br><br>
+            <button type="button" class="btn btn-outline-primary" (click)="editarUsuario()"> <i class="fas fa-save    "></i> Actualizar</button>
           </div>
         </div>
       </div>

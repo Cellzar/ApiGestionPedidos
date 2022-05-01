@@ -76,7 +76,6 @@ export class UsuariosComponent implements OnInit {
   }
 
   editarUsuario() {
-    console.log(this.usuarioEditar);
     if (this.usuarioEditar.usuPass != this.passConfirmModal) {
       Swal.fire('', 'Contraseñas no coinciden', 'warning');
     } else if (this.usuarioEditar.usuPass == '' || this.usuarioEditar.usuNombre == '') {

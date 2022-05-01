@@ -5,7 +5,7 @@
       <span class="example-fill-remaining-space"></span>
       <span class="align-center"></span>
       <span class="example-fill-remaining-space"></span>
-      <button mat-button routerLink="vuelos" routerLinkActive="active">Vuelos</button>
-      <button mat-button routerLink="usuarios" *ngIf="loginService.perfilId == 1" routerLinkActive="active">Usuarios</button>
-      <button mat-button class="cerrar" (click)="cerrarSesion()">Cerrar sesión</button>
+      <button mat-button routerLink="vuelos" routerLinkActive="active"> <i class="fa fa-plane" aria-hidden="true"></i> Vuelos</button>
+      <button mat-button routerLink="usuarios" *ngIf="loginService.perfilId == 1" routerLinkActive="active"> <i class="fa fa-user" aria-hidden="true"></i> Usuarios</button>
+      <button mat-button class="cerrar" (click)="cerrarSesion()"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar sesión </button>
    </mat-toolbar-row>

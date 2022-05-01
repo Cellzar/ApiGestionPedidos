@@ -13,6 +13,7 @@ export class BarraSuperiorComponent implements OnInit {
   constructor(public cookieService: CookieService,private router: Router, public loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.loginService.perfilId = Number(this.cookieService.get("perfil"));
   }
 
   cerrarSesion(){

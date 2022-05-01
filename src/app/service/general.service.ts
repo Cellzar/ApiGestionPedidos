@@ -53,7 +53,7 @@ export class GeneralService {
   }
 
   guardarVuelo(vuelos: Vuelos){
-    return this.http.post<Respuesta>(`${this.url}/api/Vuelos/GuardarActualizarCita`, vuelos, {headers: this.reqHeader});
+    return this.http.post<Respuesta>(`${this.url}/api/Vuelos/GuardarActualizarVuelo`, vuelos, {headers: this.reqHeader});
   }
 
   cargarVuelos(){
@@ -69,6 +69,6 @@ export class GeneralService {
   }
 
   editarVuelo(vuelos: Vuelos){
-    return this.http.post<Respuesta>(`${this.url}/api/Vuelos/GuardarActualizarCita`, vuelos,  {headers: this.reqHeader});
+    return this.http.post<Respuesta>(`${this.url}/api/Vuelos/GuardarActualizarVuelo`, vuelos,  {headers: this.reqHeader});
   }
 }

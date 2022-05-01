@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
           if(result.mensaje == 'Bienvenido al sistema'){
             Swal.fire('Hecho', result.mensaje, 'success');
             this.service.perfilId = result.data['usuario'].perfil;
-            console.log(this.service.perfilId)
             this.cookieService.set('token', result.data['token']);
+            this.cookieService.set('perfil', result.data['usuario'].perfil);
             this.router.navigate(["home"]);
           }else{
             Swal.fire('Error', result.mensaje, 'warning');
