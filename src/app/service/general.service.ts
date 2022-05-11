@@ -57,6 +57,7 @@ export class GeneralService {
   }
 
   cargarVuelos(){
+    console.log(this.reqHeader)
     return this.http.get<Respuesta>(`${this.url}/api/Vuelos/ObtenerVuelos`,  {headers: this.reqHeader});
   }
 
